@@ -66,8 +66,6 @@ When click the popup button, background.js send a message to update value of `in
 4|content|update storage(speed), change speed, display number
 
 
- 
-
 #### Trigger, background work when
 1. onMessage, as above
 2. onInstalltion, set storage
@@ -97,6 +95,16 @@ w | display/hidden speed
 2 | onMessage | background | addIframe
 3 | onMessage | background | displayNumber
 4 | onMessage | background | changeColor
+
+## Schedule
+### Down
+2019/01/28 build up background, content
+2019/01/28 Testing that 2 part, work
+
+### Keep going
+1. popup.js redefine all methods
+2. popup.icon design
+3. option page design
 
 # Readme
  <https://hackmd.io/s/Skv-ZdZXN>
