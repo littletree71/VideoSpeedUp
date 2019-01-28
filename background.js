@@ -7,6 +7,23 @@ var running = false;
  Global function
 =========================================*/
 // Send message to content
+
+// Add Iframe
+function addIframe() {
+    chrome.tabs.query({
+        active: true,
+        currentWindow: true
+    }, function(tabs) {
+        chrome.tabs.sendMessage(tabs[0].id, {
+            name: "addIframe",
+            from: "background",
+            content: true
+        });
+    });
+}
+
+
+
 // Add App
 function addAPP() {
     chrome.tabs.query({
@@ -68,6 +85,7 @@ function updateIcon() {
         });
     });
 }
+
 /*=========================================
  Event Listerner
 =========================================*/
