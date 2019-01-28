@@ -79,7 +79,7 @@ When click the popup button, background.js send a message to update value of `in
 1. add iframe
 2. speed number show up and fade out
 3. change speed
-
+4. change color
 
 #### Shortcuts
 key|work
@@ -88,6 +88,15 @@ a | speed down
 s | reset speed
 d | speed up
 w | display/hidden speed
+
+#### Trigger
+
+#|eventListener| from |work
+:--:|:--:|:--:|:---
+1 | keydown | self | 4 shortcuts, send message to background, change speed
+2 | onMessage | background | addIframe
+3 | onMessage | background | displayNumber
+4 | onMessage | background | changeColor
 
 # Readme
  <https://hackmd.io/s/Skv-ZdZXN>
