@@ -185,18 +185,6 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
     })
 })
 
-// onClicked, send message to popup update the speed input value
-chrome.browserAction.onClicked.addListener(function() {
-    chrome.storage.sync.get('VSU_Speed', function(data) {
-        console.log("The speed in stroage:" + data.VSU_Speed);
-        chrome.runtime.sendMessage({
-            name: "updateInputValue",
-            from: "background",
-            value: data.VSU_Speed
-        })
-    })
-});
-
 // onMessage, insert iframe, speed change, color change
 chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
     console.log("message from " + message.from + ", name " + message.name + ",value " + message.value);
@@ -208,7 +196,9 @@ chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
             displayNumber(speed);
         }
         if (message.name == "changeColor") {
-            updateStorage("Color", message.value);
+            color = message.value;
+            updateStorage("Color", color);
+            changeColor(color)
             chrome.storage.sync.get('VSU_Speed', function(data) {
                 displayNumber(data.VSU_Speed);
             })
