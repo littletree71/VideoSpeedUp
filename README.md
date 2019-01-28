@@ -84,10 +84,10 @@ When click the popup button, background.js send a message to update value of `in
 #### Shortcuts
 key|work
 :--:|:--
-z |speed down
-x |reset speed
-c| speed up
-s| display/hidden speed
+a | speed down
+s | reset speed
+d | speed up
+w | display/hidden speed
 
 # Readme
  <https://hackmd.io/s/Skv-ZdZXN>
