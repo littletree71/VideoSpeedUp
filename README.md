@@ -47,6 +47,7 @@ When click the popup button, background.js send a message to update value of `in
 2. change speed
 3. change color
 4. update storage(speed or color)
+5. display number
 
 1~2 send a message to content,(although can execute in background)
 
@@ -59,17 +60,17 @@ When click the popup button, background.js send a message to update value of `in
 
 #|from|work
 :--|:--|:--
-1|popup|update storage(speed), change speed
-2|popup|update storage(color), change color
-3|popup|add iframe
-4|content|update storage(speed), change speed
+1|popup|update storage(speed), change speed, display number
+2|popup|update storage(color), change color, display number
+3|popup|add iframe, display number
+4|content|update storage(speed), change speed, display number
 
 
  
 
 #### Trigger, background work when
 1. onMessage, as above
-2. onInstalltion, add iframe 
+2. onInstalltion, set storage
 3. onWebUpdate, add iframe
 4. popup.onClick, send message to popup about update value of speed input
 
