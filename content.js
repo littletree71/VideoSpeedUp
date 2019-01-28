@@ -12,7 +12,7 @@ mySpeedLabel.style.opacity = 0;
 mySpeedLabel.style.transform = "translateX(-50%) translateY(-50%)";
 mySpeedLabel.style.visibility = "visible";
 // mySpeedLabel.style.visibility = "hidden";
-mySpeedLabel.style.transition = "opacity 0.5s linear"
+// mySpeedLabel.style.transition = "opacity 0.5s linear"
 
 var timer = setTimeout(function() {}, 100);
 var runningflag = false;
@@ -42,9 +42,12 @@ function addIframe() {
 // show up and fade out
 function showUp(opacity) {
     //     mySpeedLabel.style.visibility = "visible";
+    mySpeedLabel.style.transition = "";
     mySpeedLabel.style.opacity = opacity;
+
 }
 function fadeOut(delayTime) {
+    mySpeedLabel.style.transition = "opacity 0.5s linear";
     timer = setTimeout(function() {
         mySpeedLabel.style.opacity = "0";
     }, delayTime);
@@ -97,22 +100,24 @@ document.body.addEventListener("keydown", function(event) {
     }
 });
 
+
 // OnMessage
 chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
     if (message.from == "background") {
+        console.log(message.name);
         switch (message.name) {
-        case addIframe:
+        case "addIframe":
             addIframe();
             showUp("0.8");
             fadeOut(2000);
             break;
-        case displayNumber:
+        case "displayNumber":
             number = message.value;
             changeNumber(number);
             showUp("0.8");
             fadeOut(2000);
             break;
-        case changeColor:
+        case "changeColor":
             color = message.value;
             changeColor(color);
             showUp("0.8");

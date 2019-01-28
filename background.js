@@ -58,9 +58,9 @@ function updateStorage(attr, value) {
             var color = data.VSU_Color;
             console.log('The color in storage: ' + color);
             chrome.storage.sync.set({
-                VSU_Color: color
+                VSU_Color: value
             }, function() {
-                console.log('The color in storage updated: ' + color);
+                console.log('The color in storage updated: ' + value);
             });
         })
     }
@@ -69,9 +69,9 @@ function updateStorage(attr, value) {
             var speed = data.VSU_Speed;
             console.log('The speed in storage: ' + speed);
             chrome.storage.sync.set({
-                VSU_Speed: speed
+                VSU_Speed: value
             }, function() {
-                console.log('The speed in storage updated: ' + speed);
+                console.log('The speed in storage updated: ' + value);
             });
         })
     }
@@ -168,7 +168,7 @@ chrome.runtime.onInstalled.addListener(function() {
         VSU_Color: "white",
         VSU_Speed: "1.0"
     }, function() {
-        console.log('Set VSU_Speed: ' + VSU_Speed + ', Set VSU_Color: ' + VSU_Color);
+        console.log('Set VSU_Speed: white, Set VSU_Color: 1.0');
     });
 });
 
@@ -226,7 +226,7 @@ chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
                 case "Up":
                     if (!isNaN(speed)) {
                         if (speed < 20) {
-                            speed = String(speed + 0.1).toFixed(1);
+                            speed = String((speed + 0.1).toFixed(1));
                             changeSpeed(speed);
                             updateStorage("Speed", speed);
                             displayNumber(speed);
@@ -236,7 +236,7 @@ chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
                 case "Down":
                     if (!isNaN(speed)) {
                         if (speed > 0.1) {
-                            speed = String(speed - 0.1).toFixed(1);
+                            speed = String((speed - 0.1).toFixed(1));
                             changeSpeed(speed);
                             updateStorage("Speed", speed);
                             displayNumber(speed);
