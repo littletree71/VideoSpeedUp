@@ -227,8 +227,8 @@ chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
                     if (!isNaN(speed)) {
                         if (speed < 20) {
                             speed = String((speed + 0.1).toFixed(1));
-                            changeSpeed(speed);
                             updateStorage("Speed", speed);
+                            changeSpeed(speed);
                             displayNumber(speed);
                         }
                     }
@@ -237,8 +237,8 @@ chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
                     if (!isNaN(speed)) {
                         if (speed > 0.1) {
                             speed = String((speed - 0.1).toFixed(1));
-                            changeSpeed(speed);
                             updateStorage("Speed", speed);
+                            changeSpeed(speed);
                             displayNumber(speed);
                         }
                     }
@@ -246,8 +246,8 @@ chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
                 case "Reset":
                     if (!isNaN(speed)) {
                         speed = "1.0";
-                        changeSpeed(speed);
                         updateStorage("Speed", speed);
+                        changeSpeed(speed);
                         displayNumber(speed);
                     }
                     break;

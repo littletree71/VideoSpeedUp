@@ -1,8 +1,8 @@
 /*=========================================
  Initial
 =========================================*/
-chrome.storage.sync.get('nowSpeed', function(data) {
-    var tmp = parseFloat(data.nowSpeed);
+chrome.storage.sync.get('VSU_Speed', function(data) {
+    var tmp = parseFloat(data.VSU_Speed);
     document.getElementById("Speed").value = (tmp).toFixed(1);
 })
 /*=========================================
