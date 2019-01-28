@@ -98,7 +98,7 @@ w | display/hidden speed
 
 ## Schedule
 ### Down
-2019/01/28 build up background, content
+2019/01/28 build up background, content  
 2019/01/28 Testing that 2 part, work
 
 ### Keep going
