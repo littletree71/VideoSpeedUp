@@ -1,4 +1,3 @@
-VideoSpeedUp
 # VideoSpeedUp
 ## Intro
 A google extension developed for speed up video on the web, ex: youtube...  
@@ -89,3 +88,5 @@ x |reset speed
 c| speed up
 s| display/hidden speed
 
+# Readme
+ <https://hackmd.io/s/Skv-ZdZXN>
