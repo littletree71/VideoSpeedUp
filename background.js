@@ -216,7 +216,7 @@ chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
                 switch (value) {
                 case "Up":
                     if (!isNaN(speed)) {
-                        if (speed < 20) {
+                        if (speed < 10) {
                             speed = String((speed + 0.1).toFixed(1));
                             updateStorage("Speed", speed);
                             changeSpeed(speed);
