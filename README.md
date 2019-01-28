@@ -24,10 +24,11 @@ steps
 
 ### Popup(html, js)
 #### Popup contains 4 main methods
-1. change color
+1. update input value
 2. change speed
-3. insert iframe
-4. help
+3. change color
+4. add iframe
+5. help
 
 1~3 just send message to background to execute
 
