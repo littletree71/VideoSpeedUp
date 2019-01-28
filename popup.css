@@ -1,0 +1,200 @@
+* {
+    /* 	border: 1px solid #000; */
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    font-family: "微軟正黑體";
+    -webkit-user-select: none;
+    /* 	position: relative; */
+}
+
+html {
+}
+
+body {
+    width: 160px;
+    background: #34363f;
+    padding:5px;
+}
+
+section {
+    padding: 5px;
+    padding-bottom: 0px;
+    display: flex;
+}
+
+inText {
+    font-size: 15px;
+    font-weight: normal;
+    color: #c5c8d4;
+}
+
+/* ====================== */
+/* Left */
+/* ====================== */
+Left {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+/* ====================== */
+/* Right */
+/* ====================== */
+Right {
+    flex: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+ColorSpace {
+    display: flex;
+    border-radius: 3px;
+    height: 25px;
+}
+
+box {
+    flex: 1;
+    margin-left: 2px;
+    margin-right: 2px;
+    border-radius: 4px;
+    border: 1px solid #000;
+}
+
+box:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 1px 2px rgba(255, 255, 255, 0.7);
+}
+
+#box_1 {
+    background-color: white;
+}
+
+#box_2 {
+    background-color: black;
+}
+
+#box_3 {
+    background-color: #111;
+}
+
+SpeedSpace {
+    margin-top: 2px;
+    display: flex;
+    height: 25px;
+    border: 2px solid #111;
+    border-radius: 2px;
+}
+
+deb {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+input {
+    flex: 3;
+    text-align: right;
+    background: transparent;
+    color: rgb(253,253,253);
+    border: none;
+}
+
+input::-webkit-inner-spin-button {
+    opacity: 9;
+    margin-left: 5px;
+}
+
+#btn_Default {
+    padding-top: 5px;
+    padding-down: 5px;
+    width: 25px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #111;
+    overflow: hidden;
+    color: white;
+}
+
+#btn_Default:hover {
+    cursor: pointer;
+    background-color: #ff3c41;
+}
+
+/* ====================== */
+/* Bottom */
+/* ====================== */
+Bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px;
+    transform: translateX(5%);
+}
+
+h3 {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+#btn_Insert:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 1px 2px rgba(0, 0, 0, 0.3);
+    background-color: #ff3c41;
+}
+
+#btn_Insert {
+    flex: 20;
+    padding: 0px 10px 0px 10px;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid #000;
+    border-radius: 3px;
+    color: white;
+    background-color: #111;
+}
+
+#btn_Help {
+    flex: 5;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    transform: translateX(-50%);
+    border: 1px solid #000;
+    border-radius: 10px;
+    color: white;
+    background-color: #111;
+}
+
+#btn_Help:hover {
+    cursor: pointer;
+}
+
+#help {
+    z-index:999;
+    position: relative;
+    display: hidden;
+    text-size: 15px;
+    border: 1px solid #000;
+    align: center;
+    width: 380px;
+    background-color: #111;
+    color: white;
+}
+
+.shortcut {
+/*     display: inline; */
+    background-color: #444;
+    border-radius: 5px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.text {
+    margin-right: 10px;
+}

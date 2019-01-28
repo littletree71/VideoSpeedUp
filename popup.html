@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <link href="popup.css" rel="stylesheet">
+</head>
+<body>
+    <section>
+        <Left>
+            <inText>Color</inText>
+            <inText>Speed</inText>
+        </Left>
+        <Right>
+            <ColorSpace>
+                <box id="box_1"></box>
+                <box id="box_2"></box>
+                <box id="box_3"></box>
+            </ColorSpace>
+            <SpeedSpace>
+                <input type="number" id="Speed" min="0.1" max="20" step="0.1" value="1.0"/>
+                <deb>
+                    <div id="btn_Default">O</div>
+                </deb>
+            </SpeedSpace>
+        </Right>
+    </section>
+    <Bottom>
+        <h3 id="btn_Insert">Insert </h3>
+        <h3 id="btn_Help">?</h3>
+    </Bottom>
+<!--     <Help id="help">
+        <span class="text">Shortcuts </span>
+        <span class="shortcut">Z</span>
+        <span class="text">speed up </span>
+        <span class="shortcut">X</span>
+        <span class="text">default </span>
+        <span class="shortcut">C</span>
+        <span class="text">speed down</span>
+    </Help> -->
+</body>
+<script src='popup.js'></script>
+</html>
