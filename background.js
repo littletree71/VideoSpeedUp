@@ -189,7 +189,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
     console.log("message from " + message.from + ", name " + message.name + ",value " + message.value);
     if (message.from == "popup") {
-        if (message.name == "changSpeed") {
+        if (message.name == "changeSpeed") {
             speed = message.value;
             changeSpeed(speed);
             updateStorage("Speed", speed);

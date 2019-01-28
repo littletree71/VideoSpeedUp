@@ -1,3 +1,5 @@
+updateInputValue();
+
 /*=========================================
  Global Function
 =========================================*/
@@ -15,7 +17,7 @@ function changeColor(color){
 //  (string) speed
 function changeSpeed(speed){
     chrome.runtime.sendMessage({
-        name: "changeColor",
+        name: "changeSpeed",
         from: "popup",
         value: speed
     })
@@ -41,10 +43,14 @@ function getHelp(){
     alert(help);
 }
 
-// Update InputValue, when popup img click get message from background
-function updateInputValue(speed){
-    document.getElementById("Speed").value;
+// Update InputValue, when js execute
+function updateInputValue(){
+    chrome.storage.sync.get('VSU_Speed', function(data) {
+        console.log("The speed in stroage:" + data.VSU_Speed);
+        document.getElementById("Speed").value = data.VSU_Speed;
+    })
 }
+
 
 
 /*=========================================
@@ -66,25 +72,26 @@ document.getElementById("box_3").onclick = function(){
 var tms;
 document.getElementById("Speed").onchange = function() {
     // Speed from 0.1~20
-    if (parseFloat(this.value) <= 20 && parseFloat(this.value) >= 0.1) {
+    speed = document.getElementById('Speed').value;
+    if (parseFloat(speed) <= 20 && parseFloat(speed) >= 0.1) {
         // Send message to background, change speed
         clearTimeout(tms);
         tms = setTimeout(function() {
-            var speed = string(this.value);
-            changeSpeed(speed);
-        }, 1000);
+            changeSpeed(document.getElementById('Speed').value);
+        }, 500);
     }
     // Out of speed range
-    if (parseFloat(this.value) > 20) {
-        this.value = "20.0";
+    if (parseFloat(speed) > 20) {
+        speed = "20.0";
     }
-    if (parseFloat(this.value) < 0.1) {
-        this.value = "0.1";
+    if (parseFloat(speed) < 0.1) {
+        speed = "0.1";
     }
 }
 
 // speed reset button onclick
 document.getElementById("btn_Default").onclick = function() {
+    document.getElementById('Speed').value = "1.0";
     changeSpeed("1.0");
 }
 
@@ -97,19 +104,6 @@ document.getElementById("btn_Insert").onclick = function() {
 document.getElementById("btn_Help").onclick = function(){
     getHelp();
 }
-
-/*=========================================
- EventListener from message
-=========================================*/
-// updateInputValue
-chrome.runtime.onMessage(function(message, sender, sendResponse) {
-    if(message.name == "updateInputValue"){
-        speed = message.value;
-        updateInputValue(speed);
-    }
-})
-
-
 
 
 
