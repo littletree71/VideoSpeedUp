@@ -92,7 +92,7 @@ document.body.addEventListener("keydown", function(event) {
         changeSpeed("Up");
     }
     if (event.key == "w") {
-        if (mySpeedLabel.style.opacity == 1) {
+        if (mySpeedLabel.style.opacity > 0) {
             fadeOut(200);
         } else {
             showUp("0.8");
