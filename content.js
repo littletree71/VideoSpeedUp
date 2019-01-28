@@ -3,7 +3,7 @@
 =========================================*/
 
 var mySpeedLabel = document.createElement("div");
-mySpeedLabel.id = "mylabel";
+mySpeedLabel.id = "VSU_SpeedLabel";
 mySpeedLabel.innerText = "1.0";
 mySpeedLabel.style.position = "absolute";
 mySpeedLabel.style.left = "50%";
@@ -107,7 +107,9 @@ chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
         console.log(message.name);
         switch (message.name) {
         case "addIframe":
-            addIframe();
+            if(mySpeedLabel.parentElement == null){
+                addIframe();    
+            }
             showUp("0.8");
             fadeOut(2000);
             break;
