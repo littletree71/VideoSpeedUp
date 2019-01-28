@@ -11,11 +11,8 @@ mySpeedLabel.style.color = "white";
 mySpeedLabel.style.opacity = 0;
 mySpeedLabel.style.transform = "translateX(-50%) translateY(-50%)";
 mySpeedLabel.style.visibility = "visible";
-// mySpeedLabel.style.visibility = "hidden";
-// mySpeedLabel.style.transition = "opacity 0.5s linear"
 
 var timer = setTimeout(function() {}, 100);
-var runningflag = false;
 
 /*=========================================
  Global function

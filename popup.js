@@ -1,3 +1,4 @@
+// Always execute when click popup.icon
 updateInputValue();
 
 /*=========================================

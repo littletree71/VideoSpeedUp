@@ -1,13 +1,71 @@
+VideoSpeedUp
+===
 # VideoSpeedUp
+
+<!-- ====================================== -->
+<!--         Intro -->
+<!-- ====================================== -->
 ## Intro
 A google extension developed for speed up video on the web, ex: youtube...  
 
-*VideoSpeedUp* execute js `playbackRate`(a property of video tag) to change playing speed of video.
+*VideoSpeedUp* execute js `playbackRate`(a property of video tag) to change playing speed of video. Deal with shortkeys and speed labels.
 
-On developing....
-Readme: <https://hackmd.io/s/Skv-ZdZXN>
+Second version....  
 
-## Build up step
+shortkey|work
+:--:|:--
+a | speed down
+s | reset speed
+d | speed up
+w | display/hidden speed
+
+Preview:
+
+
+Readme: <https://hackmd.io/s/Skv-ZdZXN>  
+Github: <https://github.com/littletree71/VideoSpeedUp>  
+
+<div id="FutureDirection">  </div>
+
+<!-- ====================================== -->
+<!--         Schedule -->
+<!-- ====================================== -->
+
+## Schedule
+### Done
+2019/01/28 build up background, content  
+2019/01/28 Testing that 2 part, work  
+2019/01/29 build up popup, manifest  
+2019/01/29 update icon  
+2019/01/29 version 2.0 done  
+
+### Future direction and Keep going
+#### Option page design
+Option page for user setting with 4 methods
+1. color setting
+2. shortkeys setting
+3. exceptional website list
+4. save button
+5. connect email
+
+May face with   
+1. local file setting
+2. color icon redefine
+3. shortkeys redefine
+
+#### Multiple iframe in tabs
+Current design only modify first video tags in active tab
+
+May face with   
+1. showUp/fadeOut with Class, addClass/removeClass
+2. A fake id for videos, send to background
+
+
+<!-- ====================================== -->
+<!--         Build up steps -->
+<!-- ====================================== -->
+
+## Build up steps
 steps
 1. Clone from github
 2. Unzip `VideoSpeedUp`
@@ -15,49 +73,65 @@ steps
 4. Turn on `Developer mode` in extension
 5. Click `Load unpacked` and choose the folder `VideoSpeedUp`
 
-## Constitute
 
+<!-- ====================================== -->
+<!--         Work Constitute -->
+<!-- ====================================== -->
+
+## Work Constitute
 1. Popup
 2. Background
 3. Content
 4. Optional
 
-### Popup(html, js)
-#### Popup contains 4 main methods
-1. update input value
+
+<!-- ++++++++++++++++++++++++++++++++++++++ -->
+<!--         Popup(html/css/js) -->
+<!-- ++++++++++++++++++++++++++++++++++++++ -->
+
+## 1. Popup(html/css/js)
+### Popup contains 4 main methods
+1. change color
 2. change speed
-3. change color
-4. add iframe
-5. help
+3. add iframe
+4. get help
+5. update input value
 
 1~3 just send message to background to execute
+4 popup an alert as help message
+5 execute when popupicon onclick
 
-#### There are 5 kinds of object and its event listener
-1. color box(onclick)
-2. speed input(onchange)
-3. speed reset(onclick)
-4. insert iframe(onclick)
-5. help button(onclick)
+### There are 5 kinds of object and its event listener
 
-#### Another special method and event listener 
-When click the popup button, background.js send a message to update value of `input box of speed`
+#|Object| Event| Method
+:--:|:--|:--:|:---
+1| color box|(onclick)| changeColor
+2| speed input|(onchange)| changeSpeed
+3| speed reset|(onclick)| changeSpeed
+4| insert iframe|(onclick)| addIframe
+5| help button|(onclick)| getHelp
 
-### Background(js)
-#### Background contains 4 main methods
+
+<!-- ++++++++++++++++++++++++++++++++++++++ -->
+<!--         Background(js) -->
+<!-- ++++++++++++++++++++++++++++++++++++++ -->
+
+## 2. Background(js)
+### Background contains 4 main methods
 1. add iframe
-2. change speed
-3. change color
-4. update storage(speed or color)
-5. display number
+2. change color
+3. display number
+4. change speed
+5. update storage(speed or color)
 
-1~2 send a message to content,(although can execute in background)
+1~3 send a message to content,(although can execute in background)
+4 execute in active tabs
 
-#### Message listener, background as a message listener according to situation execute methods
+### Message listener, background as a message listener according to situation execute methods
 1. listen `speed change` 
 2. listen `color change` 
 3. listen `insert iframe` 
 4. listen `speed change` 
-
 
 #|from|work
 :--|:--|:--
@@ -67,20 +141,25 @@ When click the popup button, background.js send a message to update value of `in
 4|content|update storage(speed), change speed, display number
 
 
-#### Trigger, background work when
+### Trigger, background work when
 1. onMessage, as above
 2. onInstalltion, set storage
 3. onWebUpdate, add iframe
 4. popup.onClick, send message to popup about update value of speed input
 
-### Content(js)
-#### Content contains 3 main methods
+
+<!-- ++++++++++++++++++++++++++++++++++++++ -->
+<!--         Content(js) -->
+<!-- ++++++++++++++++++++++++++++++++++++++ -->
+
+## 3. Content(js)
+### Content contains 3 main methods
 1. add iframe
 2. speed number show up and fade out
 3. change speed
 4. change color
 
-#### Shortcuts
+### Shortcuts
 key|work
 :--:|:--
 a | speed down
@@ -88,7 +167,7 @@ s | reset speed
 d | speed up
 w | display/hidden speed
 
-#### Trigger
+### Trigger
 
 #|eventListener| from |work
 :--:|:--:|:--:|:---
@@ -97,15 +176,18 @@ w | display/hidden speed
 3 | onMessage | background | displayNumber
 4 | onMessage | background | changeColor
 
-## Schedule
-### Down
-2019/01/28 build up background, content  
-2019/01/28 Testing that 2 part, work
+<!-- ++++++++++++++++++++++++++++++++++++++ -->
+<!--         Option(js) -->
+<!-- ++++++++++++++++++++++++++++++++++++++ -->
+## 4. Option(html/css/js)
+[See future direction](#FutureDirection)
 
-### Keep going
-1. popup.js redefine all methods
-2. popup.icon design
-3. option page design
+<!-- ====================================== -->
+<!--         Readme and Github -->
+<!-- ====================================== -->
 
-# Readme
- <https://hackmd.io/s/Skv-ZdZXN>
+## Readme
+<https://hackmd.io/s/Skv-ZdZXN>
+
+## Github
+<https://github.com/littletree71/VideoSpeedUp>  
