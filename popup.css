@@ -14,7 +14,7 @@ html {
 body {
     width: 160px;
     background: #34363f;
-    padding:5px;
+    padding: 5px;
 }
 
 section {
@@ -65,7 +65,8 @@ box {
 
 box:hover {
     cursor: pointer;
-    box-shadow: 0px 0px 1px 2px rgba(255, 255, 255, 0.7);
+    box-shadow: 0px 0px 1px 1.5px rgba(255, 255, 255, 0.7);
+/*     box-shadow: 0px 0px 1px 1.5px rgba(250, 60, 65, 0.7); */
 }
 
 #box_1 {
@@ -103,14 +104,19 @@ input {
     border: none;
 }
 
+input:hover{
+    background-color: #ff3c41;
+}
+
 input::-webkit-inner-spin-button {
     opacity: 9;
     margin-left: 5px;
+    height: 26px;
 }
 
 #btn_Default {
-    padding-top: 5px;
-    padding-down: 5px;
+    border-radius: 1px;
+    padding-top: 1px;
     width: 25px;
     text-align: center;
     vertical-align: middle;
@@ -119,9 +125,17 @@ input::-webkit-inner-spin-button {
     color: white;
 }
 
+#svg_Reset {
+    transform: translateX(1px);
+}
+
 #btn_Default:hover {
     cursor: pointer;
     background-color: #ff3c41;
+}
+
+#svg_Help {
+    transform: translateY(-0.5px);
 }
 
 /* ====================== */
@@ -168,15 +182,17 @@ h3 {
     border: 1px solid #000;
     border-radius: 10px;
     color: white;
-    background-color: #ff3c41;
+    background-color: #59b886;
 }
 
 #btn_Help:hover {
     cursor: pointer;
+    box-shadow: 0px 0px 1px 2px rgba(0, 0, 0, 0.3);
+    background-color: #ff3c41;
 }
 
 #help {
-    z-index:999;
+    z-index: 999;
     position: relative;
     display: hidden;
     text-size: 15px;
@@ -188,7 +204,7 @@ h3 {
 }
 
 .shortcut {
-/*     display: inline; */
+    /*     display: inline; */
     background-color: #444;
     border-radius: 5px;
     padding-left: 4px;
