@@ -18,6 +18,7 @@ Preview:
 </p>
 
 Shortkeys:
+
 shortkey|work
 :--:|:--
 a | speed down
