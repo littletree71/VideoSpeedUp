@@ -15,6 +15,9 @@ mySpeedLabel.style.zIndex = "99999";
 
 var timer = setTimeout(function() {}, 100);
 
+
+
+autoAddIframe();
 /*=========================================
  Global function
 =========================================*/
@@ -42,12 +45,13 @@ function showUp(opacity) {
     //     mySpeedLabel.style.visibility = "visible";
     mySpeedLabel.style.transition = "";
     mySpeedLabel.style.opacity = opacity;
-
+    mySpeedLabel.style.visibility = "visible";
 }
 function fadeOut(delayTime) {
     mySpeedLabel.style.transition = "opacity 0.5s linear";
     timer = setTimeout(function() {
         mySpeedLabel.style.opacity = "0";
+        mySpeedLabel.style.visibility = "hidden";
     }, delayTime);
 }
 
@@ -68,6 +72,17 @@ function changeNumber(number) {
 // ChangeColor
 function changeColor(color) {
     mySpeedLabel.style.color = color;
+}
+
+// autoAddIframe
+function autoAddIframe(){
+    setInterval(function(){
+        if(document.getElementById("VSU_SpeedLabel")==null){
+            addIframe();
+            showUp();
+            fadeOut(1000);
+        }
+    }, 2000);
 }
 
 /*=========================================

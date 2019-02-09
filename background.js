@@ -106,7 +106,7 @@ chrome.runtime.onInstalled.addListener(function() {
 // onUpdated, addIframe and changeSpeed
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
     // add iframe
-    addIframe();
+    //addIframe();
     // chagne speed
     chrome.storage.sync.get('VSU_Speed', function(data) {
         console.log("The speed in stroage:" + data.VSU_Speed);
