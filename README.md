@@ -44,6 +44,7 @@ Github: <https://github.com/littletree71/VideoSpeedUp>
 2019/01/29 build up popup, manifest  
 2019/01/29 update icon  
 2019/01/29 version 2.0 done  
+2019/02/09 fix label not adding bug
 
 ### Future direction and Keep going
 #### Option page design
