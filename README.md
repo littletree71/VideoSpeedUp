@@ -10,6 +10,15 @@ A google extension developed for speed up video on the web, ex: youtube...
 
 Second version....  
 
+
+Preview:
+<p>
+   <img style="transform:translateX(50%)" src="https://github.com/littletree71/VideoSpeedUp/blob/thridVesion/Demo_01_SpeedLabel.PNG?raw=true" height=200px/>
+    <img style="transform:translateX(60%)" src="https://github.com/littletree71/VideoSpeedUp/blob/thridVesion/Demo_02_Popup.PNG?raw=true"height=130px/>
+</p>
+
+Shortkeys:
+
 shortkey|work
 :--:|:--
 a | speed down
@@ -17,11 +26,10 @@ s | reset speed
 d | speed up
 w | display/hidden speed
 
-Preview:
+Readme: <https://hackmd.io/s/Skv-ZdZXN>
 
+Github: <https://github.com/littletree71/VideoSpeedUp> 
 
-Readme: <https://hackmd.io/s/Skv-ZdZXN>  
-Github: <https://github.com/littletree71/VideoSpeedUp>  
 
 <div id="FutureDirection">  </div>
 
