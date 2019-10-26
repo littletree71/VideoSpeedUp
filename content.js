@@ -24,20 +24,25 @@ autoAddIframe();
 
 // addIframe
 function addIframe() {
-    height = document.getElementsByTagName('video')[0].style.height;
-    width = document.getElementsByTagName('video')[0].style.width;
-    // if there is not height, width get parent's 
-    if (height == "") {
-        height = document.getElementsByTagName('video')[0].offsetHeight;
-    }
-    if (width == "") {
-        width = document.getElementsByTagName('video')[0].offsetWidth;
-    }
+    if(document.getElementsByTagName('video').length != 0){
+    	if(document.getElementsByTagName('video')[0].parentElement.children.VSU_SpeedLabel != undefined){
+    		document.getElementsByTagName('video')[0].parentElement.removeChild(b)
+    	}
+        height = document.getElementsByTagName('video')[0].style.height;
+        width = document.getElementsByTagName('video')[0].style.width;
+        // if there is not height, width get parent's 
+        if (height == "") {
+            height = document.getElementsByTagName('video')[0].offsetHeight;
+        }
+        if (width == "") {
+            width = document.getElementsByTagName('video')[0].offsetWidth;
+        }
 
-    // Add mySpeedLabel
-    mySpeedLabel.style.top = String(parseFloat(height) / 2) + "px";
-    mySpeedLabel.style.fontSize = String(parseFloat(height) / 3) + "px";
-    document.getElementsByTagName('video')[0].parentElement.appendChild(mySpeedLabel);
+        // Add mySpeedLabel
+        mySpeedLabel.style.top = String(parseFloat(height) / 2) + "px";
+        mySpeedLabel.style.fontSize = String(parseFloat(height) / 3) + "px";
+        document.getElementsByTagName('video')[0].parentElement.appendChild(mySpeedLabel);    
+    }
 }
 
 // show up and fade out
@@ -76,11 +81,16 @@ function changeColor(color) {
 
 // autoAddIframe
 function autoAddIframe(){
-    setInterval(function(){
-        if(document.getElementById("VSU_SpeedLabel")==null){
-            addIframe();
-            showUp();
-            fadeOut(1000);
+    timer = setInterval(function(){
+        if(document.getElementById("VSU_SpeedLabel") == null || mySpeedLabel.style.fontSize == "0px"){
+            if(document.getElementsByTagName('video').length == 0){
+                clearInterval(timer);
+            }
+            else{
+            	addIframe();
+            	showUp();
+            	fadeOut(1000);
+            }
         }
     }, 2000);
 }
@@ -91,25 +101,29 @@ function autoAddIframe(){
 
 // Shortcuts, changeSpeed, showUp/fadeOut
 document.body.addEventListener("keydown", function(event) {
-    // a: speedDown
-    // s: speedDefault
-    // d: speedUp
-    // w: display/ hidden speed
-    if (event.key == "a") {
-        changeSpeed("Down");
-    }
-    if (event.key == "s") {
-        changeSpeed("Reset");
-    }
-    if (event.key == "d") {
-        changeSpeed("Up");
-    }
-    if (event.key == "w") {
-        if (mySpeedLabel.style.opacity > 0) {
-            fadeOut(200);
-        } else {
-            showUp("0.8");
-        }
+    if(document.activeElement.tagName != "INPUT" && 
+    	document.activeElement.tagName != "TEXTAREA" &&
+     	document.hasFocus()){
+		// a: speedDown
+	    // s: speedDefault
+	    // d: speedUp
+	    // w: display/ hidden speed
+	    if (event.key == "a") {
+	        changeSpeed("Down");
+	    }
+	    if (event.key == "s") {
+	        changeSpeed("Reset");
+	    }
+	    if (event.key == "d") {
+	        changeSpeed("Up");
+	    }
+	    if (event.key == "w") {
+	        if (mySpeedLabel.style.opacity > 0) {
+	            fadeOut(200);
+	        } else {
+	            showUp("0.8");
+	        }
+	    }
     }
 });
 
