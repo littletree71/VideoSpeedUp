@@ -26,7 +26,7 @@ autoAddIframe();
 function addIframe() {
     if(document.getElementsByTagName('video').length != 0){
     	if(document.getElementsByTagName('video')[0].parentElement.children.VSU_SpeedLabel != undefined){
-    		document.getElementsByTagName('video')[0].parentElement.removeChild(b)
+    		document.getElementsByTagName('video')[0].parentElement.removeChild(mySpeedLabel);
     	}
         height = document.getElementsByTagName('video')[0].style.height;
         width = document.getElementsByTagName('video')[0].style.width;
