@@ -93,6 +93,20 @@ function autoAddIframe(){
             }
         }
     }, 2000);
+    if(window.location.href.match("https://ani.gamer.com.tw/animeVideo.php*")){
+        setInterval(function(){
+            //點選年齡同意
+            if(document.querySelector(".choose-btn-agree") != null){
+                document.querySelector(".choose-btn-agree").click();    
+            }
+            //當暫停時
+            if( document.querySelector(".stop.vjs-hidden") == null){
+                document.querySelector(".vjs-next-button").click();
+            }
+            //還活著嗎?
+            console.log(new Date().toLocaleString() + "還活著")
+        }, 2000)
+    }
 }
 
 /*=========================================
