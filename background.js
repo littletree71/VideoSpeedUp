@@ -26,7 +26,9 @@ function changeSpeed(speed) {
         currentWindow: true
     }, function(avtiveTabs) {
         chrome.tabs.executeScript(avtiveTabs[0].id, {
-            code: "document.getElementsByTagName('video')[0].playbackRate = " + String(speed)
+            code: ` if(document.getElementsByTagName('video').length != 0){
+                        document.getElementsByTagName('video')[0].playbackRate = ${speed};
+                    }`
         });
     });
 }
