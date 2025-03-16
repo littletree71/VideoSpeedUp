@@ -81,6 +81,7 @@ function changeColor(color) {
 
 // autoAddIframe
 function autoAddIframe(){
+    //add iframe and show up to speedup video
     timer = setInterval(function(){
         if(document.getElementById("VSU_SpeedLabel") == null || mySpeedLabel.style.fontSize == "0px"){
             if(document.getElementsByTagName('video').length == 0){
@@ -93,6 +94,8 @@ function autoAddIframe(){
             }
         }
     }, 2000);
+    
+    //autoplay next video in ani.gamer.com.tw
     if(window.location.href.match("https://ani.gamer.com.tw/animeVideo.php*")){
         setInterval(function(){
             //點選年齡同意
@@ -104,7 +107,16 @@ function autoAddIframe(){
                 document.querySelector(".vjs-next-button").click();
             }
             //還活著嗎?
-            console.log(new Date().toLocaleString() + "還活著")
+            console.log(new Date().toLocaleString() + "alive")
+        }, 2000)
+    }
+
+    //remove yt vidoes infomation, since it will annoy show up when fullscreen
+    if(window.location.href.match("https://www.youtube.com/watch*")){
+        setInterval(function(){
+            if(document.getElementById("panels") != null){
+                document.getElementById("panels").style.display = "none";
+            }
         }, 2000)
     }
 }
